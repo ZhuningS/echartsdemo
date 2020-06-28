@@ -33,8 +33,7 @@
             xdata: ['201907', '201908', '201909', '201910', '201911','201912'],
             ydata1: [27.2, 25.9, 25.9, 25.3, 28.1,24.6],
             ydata2: [31, 37, 37, 46, 37, 45],
-            ydata3: [757, 763, 762, 754, 755, 756],
-            ydata4: ["自动定标", "自动定标", "自动定标", "自动定标", "自动定标"]
+            ydata3: [757, 763, 762, 754, 755, 756]
           },
           zdls:{
             xdata: [],
@@ -72,20 +71,7 @@
         let myChart = this.$echarts.init(document.getElementById('yhtj'));
         let option = {
           tooltip: {
-            trigger: 'axis',
-            formatter: function(p) {
-              console.log('p')
-              console.log(p)
-              let str = ''
-              for(let i=0;i< p.length;i++){
-                str += p[i].seriesName + ':' + p[i].value + '<br>'
-                // strdata.unshift(str)
-                
-              }
-              console.log(str)
-              return  str
-            }
-
+            trigger: 'axis'
           },
           legend: {
             bottom: -6,
@@ -175,15 +161,6 @@
               symbol: 'circle',
               symbolSize: 10,
               data: this.left.yhtj.ydata3,
-              yAxisIndex:1
-            },
-            {
-              name: '大气压力[mmHg]',
-              type: 'line',
-              color: ['#570A3E'],
-              symbol: 'circle',
-              symbolSize: 10,
-              data: this.left.yhtj.ydata4,
               yAxisIndex:1
             }
             // {
